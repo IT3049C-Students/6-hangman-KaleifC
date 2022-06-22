@@ -32,11 +32,17 @@ class Hangman {
    */
   start(difficulty, next) {
     // get word and set it to the class's this.word
+    this.word = this.getRandomWord(difficulty)
     // clear canvas
+    this.clearCanvas
     // draw base
+    this.drawBase
     // reset this.guesses to empty array
+    this.guess = []
     // reset this.isOver to false
+    this.isOver = false
     // reset this.didWin to false
+    this.didWin = false
   }
 
   /**
@@ -45,9 +51,11 @@ class Hangman {
    */
   guess(letter) {
     // Check if nothing was provided and throw an error if so
+    if (letter = null){ }
     // Check for invalid cases (numbers, symbols, ...) throw an error if it is
     // Check if more than one letter was provided. throw an error if it is.
     // if it's a letter, convert it to lower case for consistency.
+    
     // check if this.guesses includes the letter. Throw an error if it has been guessed already.
     // add the new letter to the guesses array.
     // check if the word includes the guessed letter:
@@ -103,7 +111,9 @@ class Hangman {
     this.ctx.fillRect(10, 410, 175, 10); // Base
   }
 
-  drawHead() {}
+  drawHead() {
+    this.ctx.arc(245, 10, 20, 0, 2*math.pi, false)
+  }
 
   drawBody() {}
 
